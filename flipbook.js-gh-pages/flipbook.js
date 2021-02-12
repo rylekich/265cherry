@@ -145,7 +145,8 @@
             setStyles(_canvas, {
                 'position': 'absolute',
                 'top': 0,
-                'left': 0
+                'left': 0,
+                'width': '103%'
             });
         };
 

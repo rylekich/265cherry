@@ -21,7 +21,9 @@
 			  background: black;
 			  overscroll-behavior: none;
 		   }
-			  
+			  body::-webkit-scrollbar {
+			  display: none;
+			}
 
 		nav {
 			position: absolute;
@@ -149,6 +151,23 @@
 			cursor: help;
 		}
 
+		.nav {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			z-index: 5;
+			/*background-color: black;*/
+		}
+
+		svg a > *{
+			fill: none;
+			pointer-events: all;
+		}
+
+		svg a:hover > *{
+			fill: white;
+		}
+
 		@media screen and (max-width: 425px) {
 
 			  .about p {
@@ -171,7 +190,6 @@
 					  &#x00B9; The view towards the Financial District ceased to exist after Extell Development Company <a href="https://bedfordandbowery.com/2015/04/protesters-express-outrage-over-extells-building-from-hell-coming-to-the-les/" target="_blank">demolished</a> the neighborhood supermarket in 2014 and finished erecting the <a href="https://onemanhattansquare.com/" target="_blank">luxury housing</a> development in 2019. 
 					<br> <br>
 					  &#x00B2;<a href="https://www.google.com/maps/@40.711333,-73.9887225,3a,75y,228.46h,104.11t/data=!3m6!1e1!3m4!1smN8C82M0R5trxvszkrnGpw!2e0!7i16384!8i8192" target="_blank"> Lands End II</a> is a two 26-story tower building complex at 265-275 Cherry Street (near Rutgers Slip) that was built in 1979 as part of the <a href="https://twobridges.org/programs-and-projects/affordable-housing/two-bridges-urban-renewal-area-1972-1997/" target="_blank">Two Bridges Urban Renewal Area</a>. The low and middle income development was New York City’s first Section 8 project. L+M Development Partners and CIM Group partnered in 2013 to purchase Lands End II for $279 Million. 
-					<br> <br> <a class="notready" title="Coming Soon">Stephania Hassan</a> (neé Stephanie Richardson) is an artist, former social worker, and retired special education teacher from New York City. She is my grandmother and took these beautiful photos. Website designed and built by <a href="http://jaltera.xyz" target="_blank">Kyle Richardson</a> in 2020.
 					</div>
 				</div>
 
@@ -186,6 +204,20 @@
 		</div>
 				
 		<div>*</div>
+
+		<div class="nav">
+		<svg width="299" height="164" viewBox="0 0 299 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<a xlink:href="bedroom.html"><rect id="bed-nav" x="1" y="7" width="80" height="109" stroke="white" stroke-width="2"/></a>
+		<a xlink:href="closet.html"><rect id="closet-nav" x="81" y="7" width="63" height="109" stroke="white" stroke-width="2"/></a>
+
+		<path d="M215 158H1V7H237.5M237.5 158H298V7H277.5" stroke="white" stroke-width="2"/>
+
+		<a xlink:href="index.html"><rect id="window-nav" x="238" y="1" width="39" height="10" stroke="white" stroke-width="2"/></a>
+		<a xlink:href="hallway.html"><rect id="hall-nav" x="215" y="153" width="22" height="10" stroke="white" stroke-width="2"/></a>
+
+		<a xlink:href="home.html"><circle id="curio-nav" cx="185" cy="48" r="18" stroke="white" stroke-width="2"/></a>
+		</svg>
+		</div>
 
 		<section id="view">
 		<img src="images/sky001.jpeg">
@@ -289,7 +321,7 @@
 
 <audio id="FDR">
   <source src="fdr_highway_sounds.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
+  <!-- Your browser does not support the audio element. -->
 </audio>
 
 
