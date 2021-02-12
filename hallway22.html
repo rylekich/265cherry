@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dollhouse</title>
+
+    <!-- horizontal scroll code below copied and adapted from https://www.kylaarsadjaja.com/ --->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inobounce/0.2.0/inobounce.js"></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js" style=""></script>
+
+  <style type="text/css">
+    
+body#home {
+overscroll-behavior: none;
+          overflow: auto;
+          height: calc(100%);
+          background: rgb(213,202,175);
+  display: inline-block;
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+}
+
+#home::-webkit-scrollbar {
+          display: none;
+        }
+
+.elevator {
+          background-color: grey;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        height: 90vh;
+        position: relative;
+       margin: 0 300px 0 0;
+       border-radius: 5px;
+       }
+
+       .elevator .window {
+        width: 100px;
+      height: 100px;
+      border-radius: 50%;
+       }
+
+       .elevator:hover .window{
+        background-color: yellow;
+       }
+
+       .apt {
+        font-family: monospace; 
+        text-align: center; 
+        background-color: #313163;
+        color: beige;
+        padding: 5px;
+        border: 20px outset gold;
+       }
+
+
+        .hallway {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #plaque {
+            border: 2px solid black;
+            width: 800px;
+            color: black;
+            padding: 15px;
+        }
+
+        #info {
+          border: 2px solid red;
+          box-shadow: 1px 1px 3px grey;
+          background-color: blanchedalmond;
+          height: 100%;
+            color: red;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .door {
+background-color: beige;
+width: 400px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 90vh;
+position: relative;
+margin: 0 300px;
+z-index: 3;
+transform: translate(-16px, 0);
+transition: .2s transform ease;
+}
+
+.door:hover {
+    transform: skew(0deg, 7deg) translate(-17px, 26px);
+}
+        .knob {
+        background-color: #CD9932;
+        border: 15px solid #CD9932;
+        border-radius: 50%;
+        position: absolute;
+        right: 20px;
+        bottom: 45%;
+       }
+
+       a.knob {
+        background-color: #0000ff;
+        border: 15px solid #0000ff;
+       }
+
+
+
+  </style>
+   </head>
+
+       <body id="home">
+        <section class="hallway">
+        <a class="elevator" href="street.html">
+           <div class="window" >
+              <div style="left: 50%;" class="vline"></div>
+              <div style="top: 50%; width: 100%;" class="hline"></div>
+           </div> 
+         </a>
+
+          <div id="info">
+            <h1>Dollhouse</h1>
+            <p><a href="#plaque">Info &#8594;</a></p>
+            <p>&#8592;Elevator to Street</p>
+            <p>Apt 25C &#8594;</p>
+          </div>
+
+     <a class="door" id="apt" href="apartment.html">
+                 <p class="apt">25C<br>
+                  Hassan
+                </p>
+             <div class="knob"></div>
+         </a>
+         <div style="background-color: black; width: 389px; height: 90vh; position: absolute; z-index: 0;"></div>
+
+          <div id="plaque">
+
+           <details>
+              <summary>About this project</summary>
+              <p>
+            </p>
+
+            <p>This site features a collection of archival images taken by my grandmother, Stephania Hassan, around Two Bridges where she lived and worked for over 30 years. My father, Marc, moved onto her block along with myself and my mother in the early 90s. He currently still lives in the same apartment with my younger brother.</p>
+
+            <!-- This is a dedication to my city, imaginary space, and the people that make places feel like home. ? figure out the connection here. between les, dollhouse, grandma-->
+
+            <p>Dollhouse was designed and built by Kyle Richardson. Published in November 2020.</p>
+            </details>
+
+
+            <details>
+              <summary>About Stephania Hassan</summary>
+            <p>Stephania Hassan b. 1947 (neé Stephanie Richardson) is an artist, former social worker, and retired special education teacher from New York City. </p> 
+
+            <p>Stephania attended Music and Art High School, and on the tail end of her teen years she gave birth to a son, Marc Richardson, in 1966. She'd likely met Marc's father, Dorian Fournier, at The Sketch Pad; an art cafe/bar at the South Street Seaport that Dorian's father, Alex Fournier, owned. The relationship between Dorian and Stephania didnt work out and he was not present in their lives.</p> 
+
+            <p>In the 60's — 70's she travelled between NYC and St. Thomas, painting on canvas, murals, and t-shirts. Ultimately she settled in an apartment at Lands End II at 265 Cherry Street, a complex of buildings built under Article V of the Private Housing Finance Law, a precursor to Mitchell-Lama affordable housing program, for low and middle class New Yorkers.</p> 
+
+            <p>Stephania went to college in 1975, studying photography & illustration at Pratt Institute and commercial art & advertising at NYC Technical College at CUNY. She worked briefly as a professional graphic artist but did not enjoy the cutthroat male environment.</p>
+
+            <p>In the 80s she met Mohammed Hassan, and later got married to him. She returned to school again to get a Masters degree in Social Work at Hunter College. Around this time she shifted her art practice towards doll-making in sculpted porcelain and cloth. As a practicing social worker at Gouveneur Hospital in the 80s and 90s, she also used dollmaking as a tool for her group therapy sessions. </p>
+
+            <p>Mohammed owned a Gourmet Deli called Aten-Ra on Henry St. and Jefferson St. behind Gouveneur Hospital and Stephania owned a gift shop boutique, Aten-Ra-Tu, right next door. There she sold porcelain dolls, 'exotic' clothing, books, trendy items popular in the 90s such as TY beanie babies, mood rings, pokemon cards, and other knick-knacks. In the late 90s, she went back to school for the last time to get a masters in Special Education at CUNY Brooklyn College.</p>
+
+            <p> In 2000, Stephania and Mohammed closed their shops and all of the inventory from the stores moved into their already cramped apartment. Her rent was suddenly doubled a couple years later, causing her and Mohammed to leave the LES neighborhood she'd called home for just over 30 years. In 2004 they moved to Woodhaven, Queens where they bought a house and she worked as a Special Ed Teacher at P.S. 54 for the rest of her career until she retired in 2014. In 2018 Stephania and Mohammed moved to Egypt where they currently reside.</p>
+            </details>
+        </div> 
+    
+          
+        </section>
+      </body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type='text/javascript'>
+    
+    /*!
+ * jQuery Mousewheel 3.1.13
+ * Copyright OpenJS Foundation and other contributors
+ */
+!function(e){"function"==typeof define&&define.amd?define(["jquery"],e):"object"==typeof exports?module.exports=e:e(jQuery)}(function(u){var f,d,e=["wheel","mousewheel","DOMMouseScroll","MozMousePixelScroll"],t="onwheel"in window.document||9<=window.document.documentMode?["wheel"]:["mousewheel","DomMouseScroll","MozMousePixelScroll"],w=Array.prototype.slice;if(u.event.fixHooks)for(var i=e.length;i;)u.event.fixHooks[e[--i]]=u.event.mouseHooks;var c=u.event.special.mousewheel={version:"3.1.12",setup:function(){if(this.addEventListener)for(var e=t.length;e;)this.addEventListener(t[--e],n,!1);else this.onmousewheel=n;u.data(this,"mousewheel-line-height",c.getLineHeight(this)),u.data(this,"mousewheel-page-height",c.getPageHeight(this))},teardown:function(){if(this.removeEventListener)for(var e=t.length;e;)this.removeEventListener(t[--e],n,!1);else this.onmousewheel=null;u.removeData(this,"mousewheel-line-height"),u.removeData(this,"mousewheel-page-height")},getLineHeight:function(e){var t=u(e),i=t["offsetParent"in u.fn?"offsetParent":"parent"]();return i.length||(i=u("body")),parseInt(i.css("fontSize"),10)||parseInt(t.css("fontSize"),10)||16},getPageHeight:function(e){return u(e).height()},settings:{adjustOldDeltas:!0,normalizeOffset:!0}};function n(e){var t,i=e||window.event,n=w.call(arguments,1),o=0,l=0,s=0;if((e=u.event.fix(i)).type="mousewheel","detail"in i&&(s=-1*i.detail),"wheelDelta"in i&&(s=i.wheelDelta),"wheelDeltaY"in i&&(s=i.wheelDeltaY),"wheelDeltaX"in i&&(l=-1*i.wheelDeltaX),"axis"in i&&i.axis===i.HORIZONTAL_AXIS&&(l=-1*s,s=0),o=0===s?l:s,"deltaY"in i&&(o=s=-1*i.deltaY),"deltaX"in i&&(l=i.deltaX,0===s&&(o=-1*l)),0!==s||0!==l){if(1===i.deltaMode){var a=u.data(this,"mousewheel-line-height");o*=a,s*=a,l*=a}else if(2===i.deltaMode){var h=u.data(this,"mousewheel-page-height");o*=h,s*=h,l*=h}if(t=Math.max(Math.abs(s),Math.abs(l)),(!d||t<d)&&g(i,d=t)&&(d/=40),g(i,t)&&(o/=40,l/=40,s/=40),o=Math[1<=o?"floor":"ceil"](o/d),l=Math[1<=l?"floor":"ceil"](l/d),s=Math[1<=s?"floor":"ceil"](s/d),c.settings.normalizeOffset&&this.getBoundingClientRect){var r=this.getBoundingClientRect();e.offsetX=e.clientX-r.left,e.offsetY=e.clientY-r.top}return e.deltaX=l,e.deltaY=s,e.deltaFactor=d,e.deltaMode=0,n.unshift(e,o,l,s),f&&window.clearTimeout(f),f=window.setTimeout(m,200),(u.event.dispatch||u.event.handle).apply(this,n)}}function m(){d=null}function g(e,t){return c.settings.adjustOldDeltas&&"mousewheel"===e.type&&t%120==0}u.fn.extend({mousewheel:function(e){return e?this.on("mousewheel",e):this.trigger("mousewheel")},unmousewheel:function(e){return this.off("mousewheel",e)}})});
+</script>
+
+  <script type="text/javascript">
+    
+    $('html, body, *').mousewheel(function(e, delta) {
+        this.scrollLeft -= (delta * 2);
+        // e.preventDefault();
+    });
+  </script>
+  </html>
+
