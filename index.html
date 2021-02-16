@@ -4,158 +4,134 @@
 	<meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>The View from #25C</title>
 
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Lands End One</title>
 
-	 <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@0;1&display=swap" rel="stylesheet">
 
-	<script src="flipbook.js-gh-pages/flipbook.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<style type="text/css">
-		body {
+		/*general styles*/
+		* {
 			margin: 0;
-			  padding: 0;
+			padding: 0;
+		}
+
+		body {
+			width: 100%;
+			font-size: 15px;
+			background-image: url(edited/apt.jpg);
+			background-size: cover;
 			font-family: 'Old Standard TT', serif;
-			  background: black;
-			  overscroll-behavior: none;
-		   }
-			  body::-webkit-scrollbar {
+		}
+
+		body::-webkit-scrollbar {
 			  display: none;
 			}
 
-		nav {
-			position: absolute;
-			bottom: 0;
-		    background-color: saddlebrown;
-		    color: beige;
-		    width: 100%;
-		    display: flex;
-		    justify-content: space-around;
-		    z-index: 300;
+		@font-face {
+			font-family: "ParkAve";
+  			src: url(ParkAvenueStd.woff);
 		}
 
-		.about p {
-			margin: 0;
-			padding: 0;
-			font-size: 42px;
+		 h1{
+			font-family: "ParkAve";
+			font-size: 10em;
+			font-weight: 400;
+			text-align: center;
+			line-height: .75;
 		}
 
-		#curtain {
-			font-family: 'Old Standard TT', serif;
-			color: saddlebrown;
-  			background-color: linen;
-    		position: fixed;
-    		height: 100vh;
-    		width: 100%;
-    		transition: top 500ms ease;
-    		z-index: 300;
-		}
-
-		#curtain a {
-		  text-decoration: none;
-		  border-bottom: 2px dashed beige;
-		  color: blueviolet;;
-		  transition: .3s ease;
-		}
-
-		#curtain a:hover {
-		  text-decoration: none;
-		  border-bottom: 2px dashed blueviolet;
-		  color: blueviolet;
-		}
-
-		hr {
-		  border-top: 2px solid saddlebrown;
-		}
-
-		.footnote {
-		  font-size: 16px;
-		  color: saddlebrown;
-		  font-family: sans-serif;
-		}
-
-		.closed {
-			top: 0;
-		}
-
-		.open {
-			top: calc(-100% + 51px);
-		}
-
-		.about {
-			padding: 2em;
-		}
-
-		.closed
-
-		.footnote {
-			padding: 2em 2em 2em 0;
-		    line-height: 1.2;
-		    position: absolute;
-		    align-self: baseline;
-		    bottom: 2.5em;
-		}
-
-		#info {
-		   margin: 5px;
-		    border-radius: 50%;
-		    border: 2px dashed saddlebrown;
-		    padding: 9px;
-		}
-
-		#info:hover {
-		  color: lightpink;
-		  transition: .3s ease;
-		  cursor: pointer;
-		  border: 2px dashed lightpink;
-		}
-
-		#curtain.closed #info {
-			color: lightpink;
-			border: 2px dashed lightpink;
-		}
-
-		#directions {
-			opacity: 1;
-			transition: opacity .5s ease;
-		}
-
-		#curtain.closed #directions {
-			opacity: 0;
-		}
-
-
-		#on, #off {
-		  border: 2px dashed saddlebrown;
-		  border-radius: 50%;
-		  padding: 10px;
-		  transition: .3s ease;
-		}
-
-		#on:hover,
-		#off:hover {
-		  color: lightpink;
-		  border-radius: 50%;
-		  border: 2px dashed lightpink;
-		  padding: 10px;
-		  cursor: pointer;
+		#home-wrapper {
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			/*grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));*/
+			grid-gap: 15px;
 		}
 
 		img {
-			visibility: hidden;
+			width: 100%;
 		}
 
-		.notready {
-			cursor: help;
+		/*article grid placements*/
+		#title {
+			grid-area: 2 / 1 / 4 / 5;
+			align-self: center;
+
 		}
 
-		.nav {
+		#info {
+			display: none;
+			grid-area: 1 / 1 / 2 / 3;
+			padding: 15px 0 0 15px;
+			color: lavender;
+			align-self: start;
+		}
+
+		.info-btn {
+			grid-area: 5 / 1;
+			color: lavender;
+			padding: 25px;
+			cursor: pointer;
+			border-radius: 50%;
+		    border: 2px dashed transparent;
+		    width: min-content;
+		    justify-self: center;
+		}
+
+		.info-btn:hover{
+			color: lightpink;
+		  transition: .3s ease;
+		  border: 2px dashed lightpink;
+		}
+
+		#maiden-name {
+			grid-area: 2 / 2;
+			z-index: 3;
+		}
+
+		#bc-id {
+			grid-area: 1 / 4;
+			z-index: 1;
+		}
+
+		#slr-doll {
+			grid-area: 2 / 3 / 5 / 4;
+			z-index: 3;
+		}
+
+		#pb {
+			grid-area: 4 / 1; 
+			width: 50%;
+			justify-self: center;
+		}
+
+		#peace {
+			grid-area: 1 / 2 / 6 / 5;
+		}
+
+		/*hoarding pile*/
+		.coy {
+			filter: blur(10px);
+			cursor: pointer;
+		}
+
+		.brash {
+			filter: blur(0);
+			/*display: none;*/
+			transition: filter 1s ease-in;
+		}
+
+		/*Floorplan*/
+		nav {
 			position: fixed;
 			bottom: 20px;
 			right: 20px;
-			z-index: 5;
 			/*background-color: black;*/
 		}
 
@@ -168,217 +144,45 @@
 			fill: white;
 		}
 
-		@media screen and (max-width: 425px) {
-
-			  .about p {
-			    font-size: 30px;
-			  }
-
-			}
-
 	</style>
 </head>
-<body>
 
-		<div id="curtain" class="open"> 
+	<body>
 
-				<div class="about">
-				<p>You are looking out of Stephania’s apartment window.&#x00B9; She lived on the 25th floor at 265 Cherry Street&#x00B2; between 1979 and 2004. </p>
-
-					<div class="footnote">
-						<hr>
-					  &#x00B9; The view towards the Financial District ceased to exist after Extell Development Company <a href="https://bedfordandbowery.com/2015/04/protesters-express-outrage-over-extells-building-from-hell-coming-to-the-les/" target="_blank">demolished</a> the neighborhood supermarket in 2014 and finished erecting the <a href="https://onemanhattansquare.com/" target="_blank">luxury housing</a> development in 2019. 
-					<br> <br>
-					  &#x00B2;<a href="https://www.google.com/maps/@40.711333,-73.9887225,3a,75y,228.46h,104.11t/data=!3m6!1e1!3m4!1smN8C82M0R5trxvszkrnGpw!2e0!7i16384!8i8192" target="_blank"> Lands End II</a> is a two 26-story tower building complex at 265-275 Cherry Street (near Rutgers Slip) that was built in 1979 as part of the <a href="https://twobridges.org/programs-and-projects/affordable-housing/two-bridges-urban-renewal-area-1972-1997/" target="_blank">Two Bridges Urban Renewal Area</a>. The low and middle income development was New York City’s first Section 8 project. L+M Development Partners and CIM Group partnered in 2013 to purchase Lands End II for $279 Million. 
-					</div>
-				</div>
-
-				<nav>
-					<p id="info">info</p>
-
-					<p id="directions">&#8595; Scroll to see the view &#8595;</p> 
-
-					<p> <span id="on" onclick="playAudio()">play</span> <span id="off" onclick="pauseAudio()">pause</span></p>
-				</nav>
+		<main id="home-wrapper">
+			<section id="title">
+					<h1>Grammy's House</h1>
+				</section>
 				
-		</div>
+				<p class="info-btn">Info</p>
+
+				<p id="info"> 
+				Stephania Hassan —neé Stephanie Louise Richardson— (b. April 14, 1947) is an artist, former social worker, small business owner, and retired special education teacher. She lived in New York City for most of her life, before relocating to Cairo, Egypt in 2018 with her husband Mohammed. She left a box of photos and printed ephemera that she made and/or collected over the years. Kyle Richardson, Hassan's granddaughter, is an artist and graphic designer. She compiled this digital archive of the contents in that box as an ode to her grandmother and the city that raised them. <em> Use the floorplan to navigate around the archive.</em></p> 
 				
-		<div>*</div>
+				
+				<img id="maiden-name" class="coy" src="edited/stephanie-sig-1.png">
+				
+				<img id="bc-id" class="coy" src="edited/slr_BK_73.png"> 
 
-		<div class="nav">
-		<svg width="299" height="164" viewBox="0 0 299 164" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<a xlink:href="bedroom.html"><rect id="bed-nav" x="1" y="7" width="80" height="109" stroke="white" stroke-width="2"/></a>
-		<a xlink:href="closet.html"><rect id="closet-nav" x="81" y="7" width="63" height="109" stroke="white" stroke-width="2"/></a>
+				<!-- <img id="slr-doll" class="coy" src="edited/slr_shirt_doll.png">  -->
 
-		<path d="M215 158H1V7H237.5M237.5 158H298V7H277.5" stroke="white" stroke-width="2"/>
+				<img id="pb" class="coy" src="edited/gram_photobooth.jpg"> 
+		
+				<img id="peace" class="coy" src="edited/peace-card.gif"> 
+		</main>
+		<nav>
+			<svg width="299" height="164" viewBox="0 0 299 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<a xlink:href="dollhouse.html"><rect id="bed-nav" x="1" y="7" width="80" height="109" stroke="white" stroke-width="2"/></a>
+				<a xlink:href="closet.html"><rect id="closet-nav" x="81" y="7" width="63" height="109" stroke="white" stroke-width="2"/></a>
 
-		<a xlink:href="index.html"><rect id="window-nav" x="238" y="1" width="39" height="10" stroke="white" stroke-width="2"/></a>
-		<a xlink:href="hallway.html"><rect id="hall-nav" x="215" y="153" width="22" height="10" stroke="white" stroke-width="2"/></a>
+				<path d="M215 158H1V7H237.5M237.5 158H298V7H277.5" stroke="white" stroke-width="2"/>
 
-		<a xlink:href="home.html"><circle id="curio-nav" cx="185" cy="48" r="18" stroke="white" stroke-width="2"/></a>
-		</svg>
-		</div>
+				<a xlink:href="window.html"><rect id="window-nav" x="238" y="1" width="39" height="10" stroke="white" stroke-width="2"/></a>
+				<a xlink:href="hallway.html"><rect id="hall-nav" x="215" y="153" width="22" height="10" stroke="white" stroke-width="2"/></a>
 
-		<section id="view">
-		<img src="images/sky001.jpeg">
-		<img src="images/sky002.jpeg">
-		<img src="images/sky003.jpeg">
-		<img src="images/sky004.jpeg">
-		<img src="images/sky005.jpeg">
-		<img src="images/sky006.jpeg">
-		<img src="images/sky007.jpeg">
-		<img src="images/sky008.jpeg">
-		<img src="images/sky009.jpeg">
-		<img src="images/sky010.jpeg">
-		<img src="images/sky011.jpeg">
-		<img src="images/sky012.jpeg">
-		<img src="images/sky013.jpeg">
-		<img src="images/sky014.jpeg">
-		<img src="images/sky015.jpeg">
-		<img src="images/sky016.jpeg">
-		<img src="images/sky017.jpeg">
-		<img src="images/sky018.jpeg">
-		<img src="images/sky019.jpeg">
-		<img src="images/sky020.jpeg">
-		<img src="images/sky021.jpeg">
-		<img src="images/sky022.jpeg">
-		<img src="images/sky023.jpeg">
-		<img src="images/sky024.jpeg">
-		<img src="images/sky025.jpeg">
-		<img src="images/sky026.jpeg">
-		<img src="images/sky027.jpeg">
-		<img src="images/sky028.jpeg">
-		<img src="images/sky029.jpeg">
-		<img src="images/sky030.jpeg">
-		<img src="images/sky031.jpeg">
-		<img src="images/sky032.jpeg">
-		<img src="images/sky033.jpeg">
-		<img src="images/sky034.jpeg">
-		<img src="images/sky035.jpeg">
-		<img src="images/sky036.jpeg">
-		<img src="images/sky037.jpeg">
-		<img src="images/sky038.jpeg">
-		<img src="images/sky039.jpeg">
-		<img src="images/sky040.jpeg">
-		<img src="images/sky041.jpeg">
-		<img src="images/sky042.jpeg">
-		<img src="images/sky043.jpeg">
-		<img src="images/sky044.jpeg">
-		<img src="images/sky045.jpeg">
-		<img src="images/sky046.jpeg">
-		<img src="images/sky047.jpeg">
-		<img src="images/sky048.jpeg">
-		<img src="images/sky049.jpeg">
-		<img src="images/sky050.jpeg">
-		<img src="images/sky051.jpeg">
-		<img src="images/sky052.jpeg">
-		<img src="images/sky053.jpeg">
-		<img src="images/sky054.jpeg">
-		<img src="images/sky055.jpeg">
-		<img src="images/sky056.jpeg">
-		<img src="images/sky057.jpeg">
-		<img src="images/sky058.jpeg">
-		<img src="images/sky059.jpeg">
-		<img src="images/sky060.jpeg">
-		<img src="images/sky061.jpeg">
-		<img src="images/sky062.jpeg">
-		<img src="images/sky063.jpeg">
-		<img src="images/sky064.jpeg">
-		<img src="images/sky065.jpeg">
-		<img src="images/sky066.jpeg">
-		<img src="images/sky067.jpeg">
-		<img src="images/sky068.jpeg">
-		<img src="images/sky069.jpeg">
-		<img src="images/sky070.jpeg">
-		<img src="images/sky071.jpeg">
-		<img src="images/sky072.jpeg">
-		<img src="images/sky073.jpeg">
-		<img src="images/sky074.jpeg">
-		<img src="images/sky075.jpeg">
-		<img src="images/sky076.jpeg">
-		<img src="images/sky077.jpeg">
-		<img src="images/sky078.jpeg">
-		<img src="images/sky079.jpeg">
-		<img src="images/sky080.jpeg">
-		<img src="images/sky081.jpeg">
-		<img src="images/sky082.jpeg">
-		<img src="images/sky083.jpeg">
-		<img src="images/sky084.jpeg">
-		<img src="images/sky085.jpeg">
-		<img src="images/sky086.jpeg">
-		<img src="images/sky087.jpeg">
-		<img src="images/sky088.jpeg">
-		<img src="images/sky089.jpeg">
-		<img src="images/sky090.jpeg">
-		<img src="images/sky091.jpeg">
-		<img src="images/sky092.jpeg">
-		<img src="images/sky093.jpeg">
-		<img src="images/sky094.jpeg">
-		<img src="images/sky095.jpeg">
-		<img src="images/sky096.jpeg">
-		<img src="images/sky097.jpeg">
-</section>
-
-<audio id="FDR">
-  <source src="fdr_highway_sounds.mp3" type="audio/mpeg">
-  <!-- Your browser does not support the audio element. -->
-</audio>
-
-
-<script>
-
-  $('#info').click(function() {
-
-  		$('#curtain').toggleClass('closed open')
-
-  }); 
-
-
-</script>
-
-<script>
-var x = document.getElementById("FDR");
-
-function playAudio() { 
-  x.play(); 
-  
-} 
-
-function pauseAudio() { 
-  x.pause(); 
-} 
-
-Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
-    get: function(){
-        return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
-    }
-})
-
-var aud = document.getElementById("FDR");
-
-aud.onplaying = function() {
-    $('#on').css({'border': '2px dashed lightpink', 'color': 'lightpink'})
-    $('#off').css({'border': '2px dashed saddlebrown', 'color': 'beige'})
-};
-
-aud.onpause = function() {
-	$('#on').css({'border': '2px dashed saddlebrown', 'color': 'beige'})
-    $('#off').css({'border': '2px dashed lightpink', 'color': 'lightpink'})
-};
-
-</script>
-
-<script>
-		flipbook({
-			id: 'view',
-			path: 'images',
-			filename: 'sky%3d',
-			extension: 'jpeg',
-			count: 97,
-			speed: 0,
-			cover: true,
-		});
-	</script>
-
-</body>
+				<a xlink:href="index.html"><circle id="home-nav" cx="185" cy="48" r="18" stroke="white" stroke-width="2"/></a>
+			</svg>
+		</nav>
+		<script type="text/javascript" src="hoard.js"></script>
+	</body>
 </html>
