@@ -1,0 +1,377 @@
+/* global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "ParkAve";
+      src: url(ParkAvenueStd.woff);
+}
+
+body#home::-webkit-scrollbar,
+body#window::-webkit-scrollbar,
+body#closet::-webkit-scrollbar,
+body#dollhouse::-webkit-scrollbar  {
+    display: none;
+}
+
+nav.floorplan-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+svg.floorplan a > *{
+    fill: none;
+    pointer-events: all;
+}
+
+svg.floorplan a:hover > *{
+    fill: white;
+}
+
+
+/* homepage */
+body#home{
+    font-size: 15px;
+    background-image: url(0-home/apt.jpg);
+    background-size: cover;
+    font-family: 'Old Standard TT', serif;
+}
+
+h1#title{
+    font-family: "ParkAve";
+    font-size: 10em;
+    font-weight: 400;
+    text-align: center;
+    line-height: .75;
+}
+
+main.living-room {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 15px;
+}
+
+main.living-room img{
+    width: 100%;
+}
+
+/*homepage layout placements*/
+#title {
+    grid-area: 2 / 1 / 4 / 5;
+    align-self: center;
+
+}
+
+#info {
+    display: none;
+    grid-area: 1 / 1 / 2 / 3;
+    padding: 15px 0 0 15px;
+    color: lavender;
+    align-self: start;
+}
+
+.info-btn {
+    grid-area: 5 / 1;
+    color: lavender;
+    padding: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px dashed transparent;
+    width: min-content;
+    justify-self: center;
+}
+
+.info-btn:hover{
+    color: lightpink;
+  transition: .3s ease;
+  border: 2px dashed lightpink;
+}
+
+#maiden-name {
+    grid-area: 2 / 2;
+    z-index: 3;
+}
+
+#bc-id {
+    grid-area: 1 / 4;
+    z-index: 1;
+}
+
+#slr-doll {
+    grid-area: 2 / 3 / 5 / 4;
+    z-index: 3;
+}
+
+#pb {
+    grid-area: 4 / 1; 
+    width: 50%;
+    justify-self: center;
+}
+
+#peace {
+    grid-area: 1 / 2 / 6 / 5;
+}
+
+/*js classes for blurry ephemera*/
+.coy {
+    filter: blur(10px);
+    cursor: pointer;
+}
+
+.brash {
+    filter: blur(0);
+    transition: filter 1s ease-in;
+}
+
+
+/* window */
+body#window {
+    margin: 0;
+    padding: 0;
+    font-family: 'Old Standard TT', serif;
+    background: black;
+    overscroll-behavior: none;
+}
+
+nav.shade {
+    position: absolute;
+    bottom: 0;
+    background-color: saddlebrown;
+    color: beige;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 300;
+}
+
+#shade-info {
+    margin: 5px;
+     border-radius: 50%;
+     border: 2px dashed saddlebrown;
+     padding: 9px;
+ }
+ 
+ #shade-info:hover {
+   color: lightpink;
+   transition: .3s ease;
+   cursor: pointer;
+   border: 2px dashed lightpink;
+ }
+
+.about p {
+    margin: 0;
+    padding: 0;
+    font-size: 42px;
+}
+
+#curtain {
+    font-family: 'Old Standard TT', serif;
+    color: saddlebrown;
+      background-color: linen;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    transition: top 500ms ease;
+    z-index: 300;
+}
+
+#curtain a {
+  text-decoration: none;
+  border-bottom: 2px dashed beige;
+  color: blueviolet;;
+  transition: .3s ease;
+}
+
+#curtain a:hover {
+  text-decoration: none;
+  border-bottom: 2px dashed blueviolet;
+  color: blueviolet;
+}
+
+hr {
+  border-top: 2px solid saddlebrown;
+}
+
+.footnote {
+  font-size: 16px;
+  color: saddlebrown;
+  font-family: sans-serif;
+}
+
+.closed {
+    top: 0;
+}
+
+.open {
+    top: calc(-100% + 51px);
+}
+
+.about {
+    padding: 2em;
+}
+
+.footnote {
+    padding: 2em 2em 2em 0;
+    line-height: 1.2;
+    position: absolute;
+    align-self: baseline;
+    bottom: 2.5em;
+}
+
+#curtain.closed #shade-info {
+    color: lightpink;
+    border: 2px dashed lightpink;
+}
+
+#directions {
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+
+#curtain.closed #directions {
+    opacity: 0;
+}
+
+#on, #off {
+  border: 2px dashed saddlebrown;
+  border-radius: 50%;
+  padding: 10px;
+  transition: .3s ease;
+}
+
+#on:hover,
+#off:hover {
+  color: lightpink;
+  border-radius: 50%;
+  border: 2px dashed lightpink;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#view img {
+    visibility: hidden;
+}
+
+
+/* closet */
+
+body#closet{
+    font-family: 'Old Standard TT', serif;
+    background-color: midnightblue;
+    color: bisque;
+    overscroll-behavior: none;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.rack{
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    top: 7em;
+    left: 4em;
+}
+
+.salon{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    background-color: beige;
+    font-size: 3em;
+    justify-content: center;
+}
+
+.salon a {
+    align-self: center;
+    text-decoration: none;
+}
+
+.shirt {
+  padding: 5px;
+  margin: -50px;
+}
+
+.shirt img {
+    height: 50vh;
+    transform: skew(0deg, 38deg);
+    border-radius: 5%;
+}
+
+.shirt img:hover {
+    transform: skew(0deg, 0deg);
+    height: 90vh;
+}
+
+/* secret gallery */
+
+
+
+/* dollhouse */
+
+
+
+#cabinet{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+}
+
+#simulation{
+    grid-column: 1/1;
+}
+
+#real{
+    grid-column: 2/3;
+}
+
+div.intro{
+    position: relative;
+    z-index: -1;
+    background-color: white;
+    top: 0;
+    left: 0;
+}
+
+figure{
+    background-color: black;
+}
+
+figcaption{
+    opacity: 0;
+    position: absolute;
+    top: 25%;
+    padding: 200px;
+}
+
+figure:hover figcaption{
+    opacity: 1;
+    color: white;
+}
+
+#cabinet img {
+    height: 1000px;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+#cabinet section {
+    height: 100vh;
+    overflow: overlay;
+}
+
+#cabinet section::-webkit-scrollbar {
+display: none;
+}
+
+
+/* hallway */
