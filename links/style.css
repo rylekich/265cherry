@@ -281,6 +281,21 @@ body#closet{
     left: 4em;
 }
 
+.rack-captions{
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+}
+
+.rack-captions ol{
+    display: flex;
+}
+
+.rack-captions ol li{
+    margin: 0 20px;
+}
+
+
 .salon{
     width: 300px;
     height: 300px;
@@ -308,12 +323,45 @@ body#closet{
 
 .shirt img:hover {
     transform: skew(0deg, 0deg);
-    height: 90vh;
+    height: 75vh;
 }
 
-/* secret gallery */
+#sliding-door{
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    z-index: 300;
+    transition: left 500ms ease;
+    background: rgb(176,121,38);
+    background: -moz-linear-gradient(90deg, rgba(176,121,38,1) 0%, rgba(217,211,161,1) 11%, rgba(176,121,38,1) 21%, rgba(217,211,161,1) 31%, rgba(176,121,38,1) 41%, rgba(217,211,161,1) 51%, rgba(176,121,38,1) 61%, rgba(217,211,161,1) 71%, rgba(176,121,38,1) 81%, rgba(217,211,161,1) 91%, rgba(176,121,38,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(176,121,38,1) 0%, rgba(217,211,161,1) 11%, rgba(176,121,38,1) 21%, rgba(217,211,161,1) 31%, rgba(176,121,38,1) 41%, rgba(217,211,161,1) 51%, rgba(176,121,38,1) 61%, rgba(217,211,161,1) 71%, rgba(176,121,38,1) 81%, rgba(217,211,161,1) 91%, rgba(176,121,38,1) 100%);
+    background: linear-gradient(90deg, rgba(176,121,38,1) 0%, rgba(217,211,161,1) 11%, rgba(176,121,38,1) 21%, rgba(217,211,161,1) 31%, rgba(176,121,38,1) 41%, rgba(217,211,161,1) 51%, rgba(176,121,38,1) 61%, rgba(217,211,161,1) 71%, rgba(176,121,38,1) 81%, rgba(217,211,161,1) 91%, rgba(176,121,38,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b07926",endColorstr="#b07926",GradientType=1);
+}
 
+nav.closet-knob{
+    cursor: pointer;
+    align-self: center;
+}
 
+#closet-info-btn {
+    writing-mode: vertical-lr;
+    padding-right: 15px;
+}
+
+.closet-info{
+    margin: 20px;
+}
+
+.c-closed {
+    left: 0;
+}
+
+.c-open {
+    left: calc(-100% + 51px);
+}
 
 /* dollhouse */
 
@@ -333,14 +381,6 @@ body#closet{
     grid-column: 2/3;
 }
 
-div.intro{
-    position: relative;
-    z-index: -1;
-    background-color: white;
-    top: 0;
-    left: 0;
-}
-
 figure{
     background-color: black;
 }
@@ -350,6 +390,7 @@ figcaption{
     position: absolute;
     top: 25%;
     padding: 200px;
+    pointer-events: none;
 }
 
 figure:hover figcaption{
