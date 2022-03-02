@@ -416,3 +416,7 @@ display: none;
 
 
 /* hallway */
+
+#hallway img {
+    width: 100%;
+}
