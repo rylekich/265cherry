@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dollhouse</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@0;1&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inobounce/0.2.0/inobounce.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+
+    <link rel="stylesheet" href="links/style.css">
+</head>
+
+<body id="closet">
+
+	<div id="sliding-door" class="c-closed">
+
+		<p class="closet-info">The pleasures which I made haste to seek in my disguise were, as I have said, undignified; I would scarce use a harder term. But in the hands of Edward Hyde, they soon began to turn toward the monstrous. When I would come back from these excursions, I was often plunged into a kind of wonder at my vicarious depravity. This familiar that I called out of my own soul, and sent forth alone to do his good pleasure, was a being inherently malign and villainous; his every act and thought centered on self; drinking pleasure with bestial avidity from any degree of torture to another; relentless like a man of stone. Henry Jekyll stood at times aghast before the acts of Edward Hyde; but the situation was apart from ordinary laws, and insidiously relaxed the grasp of conscience. It was Hyde, after all, and Hyde alone, that was guilty. Jekyll was no worse; he woke again to his good qualities seemingly unimpaired; he would even make haste, where it was possible, to undo the evil done by Hyde. And thus his conscience slumbered.</p>
+
+		<nav class="closet-knob">
+			<p id="closet-info-btn">Open</p>
+		</nav>
+	</div>
+
+	<section class="rack-captions">
+		<ol>
+			<li>I'm a Step-Parent. Commissioned for. Year.</li>
+			<li>Floral Design commissioned for Rebecca. Modelled by x. Year.  </li>
+			<li>Portrait commissioned for Heather by her Mom. Year. </li>
+			<li>I'm a Step-Parent. Commissioned for. Year.</li>
+		</ol>
+
+	</section>
+
+	<main class="rack">
+		<div class="shirt">
+			<img src="links/2-closet/shirts.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img src="links/2-closet/shirts27.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img src="links/2-closet/shirts2.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img src="links/2-closet/shirts3.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts23.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts25.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts5.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts_terri1.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts7.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts8.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts_dad4.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts10.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts11.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts12.jpeg">
+		</div>
+
+        <div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts20.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts13.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts1.jpeg">
+		</div>
+
+		<div class="shirt">
+			<img class="lazy" data-src="links/2-closet/shirts22.jpeg">
+		</div>
+
+    </main>
+
+    <nav class="floorplan-container">
+        <svg class="floorplan" width="299" height="164" viewBox="0 0 299 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <a xlink:href="dollhouse.html"><rect id="bed-nav" x="1" y="7" width="80" height="109" stroke="white" stroke-width="2"/></a>
+
+            <a xlink:href="closet.html"><rect id="closet-nav" x="81" y="7" width="63" height="109" stroke="white" stroke-width="2"/></a>
+
+            <path d="M215 158H1V7H237.5M237.5 158H298V7H277.5" stroke="white" stroke-width="2"/>
+
+            <a xlink:href="window.html"><rect id="window-nav" x="238" y="1" width="39" height="10" stroke="white" stroke-width="2"/></a>
+
+            <a xlink:href="hallway.html"><rect id="hall-nav" x="215" y="153" width="22" height="10" stroke="white" stroke-width="2"/></a>
+
+            <a xlink:href="index.html"><circle id="home-nav" cx="185" cy="48" r="18" stroke="white" stroke-width="2"/></a>
+        </svg>
+    </nav>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="links/mousewheel.js"></script>
+
+<script>
+    $('#closet-info-btn').click(function() {
+        $('#sliding-door').toggleClass('c-closed c-open')
+    }); 
+  </script>
+
+<script type="text/javascript">
+    
+    $('html, body, *').mousewheel(function(e, delta) {
+        this.scrollLeft -= (delta * 2);
+        // e.preventDefault();
+    });
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	var lazyloadImages;    
+  
+	if ("IntersectionObserver" in window) {
+	  lazyloadImages = document.querySelectorAll(".lazy");
+	  var imageObserver = new IntersectionObserver(function(entries, observer) {
+		entries.forEach(function(entry) {
+		  if (entry.isIntersecting) {
+			var image = entry.target;
+			image.src = image.dataset.src;
+			image.classList.remove("lazy");
+			imageObserver.unobserve(image);
+		  }
+		});
+	  });
+  
+	  lazyloadImages.forEach(function(image) {
+		imageObserver.observe(image);
+	  });
+	} else {  
+	  var lazyloadThrottleTimeout;
+	  lazyloadImages = document.querySelectorAll(".lazy");
+	  
+	  function lazyload () {
+		if(lazyloadThrottleTimeout) {
+		  clearTimeout(lazyloadThrottleTimeout);
+		}    
+  
+		lazyloadThrottleTimeout = setTimeout(function() {
+		  var scrollTop = window.pageYOffset;
+		  lazyloadImages.forEach(function(img) {
+			  if(img.offsetTop < (window.innerHeight + scrollTop)) {
+				img.src = img.dataset.src;
+				img.classList.remove('lazy');
+			  }
+		  });
+		  if(lazyloadImages.length == 0) { 
+			document.removeEventListener("scroll", lazyload);
+			window.removeEventListener("resize", lazyload);
+			window.removeEventListener("orientationChange", lazyload);
+		  }
+		}, 20);
+	  }
+  
+	  document.addEventListener("scroll", lazyload);
+	  window.addEventListener("resize", lazyload);
+	  window.addEventListener("orientationChange", lazyload);
+	}
+  })
+</script>
+</body>
+</html>
